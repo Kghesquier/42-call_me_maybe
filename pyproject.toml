@@ -20,11 +20,12 @@ llm-sdk = { path = "llm_sdk", editable = true }
 dev = [
     "flake8>=7.0",
     "mypy>=1.10",
-    "pytest>=8.0",
 ]
 
 [tool.mypy]
 exclude = ["^llm_sdk/", "^\\.venv/"]
+namespace_packages = false
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[[tool.mypy.overrides]]
+module = ["llm_sdk"]
+ignore_missing_imports = true

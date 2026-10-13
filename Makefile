@@ -1,6 +1,6 @@
 PY = uv run python
 
-.PHONY: install run debug clean lint lint-strict test
+.PHONY: install run debug clean lint lint-strict
 
 install:
 	uv sync
@@ -13,7 +13,7 @@ debug:
 
 clean:
 	find . -path ./.venv -prune -o -name "__pycache__" -type d -exec rm -rf {} +
-	rm -rf .mypy_cache .pytest_cache
+	rm -rf .mypy_cache
 
 lint:
 	uv run flake8 .
@@ -22,6 +22,3 @@ lint:
 lint-strict:
 	uv run flake8 .
 	uv run mypy . --strict
-
-test:
-	uv run pytest -q
