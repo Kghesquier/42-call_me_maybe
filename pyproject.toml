@@ -23,7 +23,7 @@ dev = [
 ]
 
 [tool.mypy]
-exclude = ["^llm_sdk/", "^\\.venv/"]
+exclude = ["^llm_sdk/", "^\\.venv/", "^\\.cache/"]
 namespace_packages = false
 
 [[tool.mypy.overrides]]
